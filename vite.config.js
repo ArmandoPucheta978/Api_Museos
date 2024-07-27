@@ -5,7 +5,7 @@ export default defineConfig({
     server: {
         port: 10000, // Cambia el puerto aquí
         proxy: {
-            '/api': 'http://0.0.0.0:8000' // Proxy para la API si es necesario
+            '/api': 'https://api-museos.onrender.com' // Proxy para la API si es necesario
         }
     },
     plugins: [
