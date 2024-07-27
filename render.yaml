@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: Api_Museos
+    env: php
+    plan: free
+    buildCommand: ""
+    startCommand: "/usr/local/bin/composer install && php-fpm"
+    envVars:
+      - key: PORT
+        value: 10000

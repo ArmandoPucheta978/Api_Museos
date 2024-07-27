@@ -49,7 +49,11 @@
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
         ],
-        "start": "php artisan serve --host 0.0.0.0 --port 80"
+        "start": [
+            "@php artisan key:generate",
+            "@php artisan migrate",
+            "php artisan serve --host 0.0.0.0 --port 10000"
+        ]
     },
     "extra": {
         "laravel": {
