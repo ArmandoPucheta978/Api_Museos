@@ -22,10 +22,22 @@ class CalificacionController extends Controller
         } else {
             $calificacion = new Calificacion();
         }
-        $calificacion->museoid = $req->museoid;
+        $calificacion->museo_id = $req->museo_id;
         $calificacion->puntuacion = $req->puntuacion;
         $calificacion->save();
         return redirect()->route('calificaciones');
+    }
+
+    public function storeAPI(Request $req){
+        if ($req->id) {
+            $calificacion = Calificacion::find($req->id);
+        } else {
+            $calificacion = new Calificacion();
+        }
+        $calificacion->museo_id = $req->museo_id;
+        $calificacion->puntuacion = $req->puntuacion;
+        $calificacion->save();
+        return "ok";
     }
 
     public function delete(Request $req){

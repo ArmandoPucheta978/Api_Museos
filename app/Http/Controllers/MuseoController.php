@@ -139,6 +139,8 @@ class MuseoController extends Controller
                 'telefono' => $museo->telefono,
                 'website' => $museo->website,
                 'costo_entrada' => $museo->costo_entrada,
+                'latitud' => $museo->latitud,
+                'longitud' => $museo->longitud,
                 'tipos' => $museo->tipos->map(function ($tipo) {
                     return [
                         'tipo_id' => $tipo->id,

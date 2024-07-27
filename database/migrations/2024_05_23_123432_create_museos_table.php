@@ -21,6 +21,8 @@ return new class extends Migration
             $table->text('descripcion')->nullable();
             $table->string('contacto')->nullable();
             $table->string('sitio_web')->nullable();
+            $table->double('latitud')->nullable();
+            $table->double('longitud')->nullable();
             $table->timestamps();
         });
     }

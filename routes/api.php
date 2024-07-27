@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalificacionController;
 use App\Http\Controllers\MuseoController;
 use App\Http\Controllers\TiposController;
 use Illuminate\Http\Request;
@@ -17,3 +18,4 @@ Route::get('/museos/eliminar',[MuseoController::class, "deleteAPI"]);
 Route::get('/tipos',[TiposController::class, "list"]);
 Route::post('/tipos/nuevo',[TiposController::class, "storeAPI"]);
 Route::get('/tipos/eliminar',[TiposController::class, "deleteAPI"]);
+Route::post('/calificacion/guardar',[CalificacionController::class, "storeAPI"]);
