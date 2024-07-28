@@ -3,7 +3,7 @@ services:
     name: Api_Museos
     env: php
     plan: free
-    buildCommand: ""
+    buildCommand: "composer install --optimize-autoloader --no-dev"
     startCommand: "/usr/local/bin/composer install && php-fpm"
     envVars:
       - key: PORT
