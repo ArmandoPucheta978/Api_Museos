@@ -65,17 +65,29 @@ class MuseoController extends Controller
         $museo->tipos()->sync($req->tipos);
 
         // Imágenes
-        if ($req->hasFile('images')) {
-            foreach ($req->file('images') as $image) {
-                $path = $image->store('public/images');
-                $imageName = time().'.'.$image->extension();
-                // Almacenar la imagen en DigitalOcean Spaces
-                Storage::disk('do')->put($imageName, file_get_contents($image->getPathName()), 'public');
-                $museo->imagenes()->create([
-                    'ruta' => basename($imageName),
-                ]);
+        // if ($req->hasFile('images')) {
+        //     foreach ($req->file('images') as $image) {
+        //         $path = $image->store('public/images');
+        //         $imageName = time().'.'.$image->extension();
+        //         // Almacenar la imagen en DigitalOcean Spaces
+        //         Storage::disk('do')->put($imageName, file_get_contents($image->getPathName()), 'public');
+        //         $museo->imagenes()->create([
+        //             'ruta' => basename($imageName),
+        //         ]);
+        //     }
+        // }
+        $images = $req->file('images');
+            foreach ($images as $image) {
+            // Definir el nombre del archivo
+            $fileName = time() . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
+            // Subir la imagen a DigitalOcean Spaces
+            $path = Storage::disk('spaces')->put($fileName, file_get_contents($image->getPathName()), 'public');
+            // Obtener la URL de la imagen subida
+            $url = env('SPACES_ENDPOINT') . '/' . $path;
+              $museo->imagenes()->create([
+              'ruta' => basename($url),
+               ]);
             }
-        }
         return redirect()->route('museos');
     }
 
