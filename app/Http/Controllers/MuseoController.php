@@ -19,7 +19,8 @@ class MuseoController extends Controller
             $museos = new Museo();
         }
         $tipos = Tipo::all();
-        return view('Museo', compact('museos', 'tipos'));
+        return view('/museo', compact('museos', 'tipos'));
+        //return view('/museo')->with('museos', $museos);
     }
 
     public function storeAll(Request $req){
@@ -125,7 +126,8 @@ class MuseoController extends Controller
     public function index(){
         // $museos = Museo::all();
         $museos = Museo::with(['tipos', 'imagenes'])->get();
-        return view('/Museos', compact('museos'));
+        return view('/museos', compact('museos'));
+        // return view('/Museos')->with('museos', $museos);
     }
 
     public function list(){

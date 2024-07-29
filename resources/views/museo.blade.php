@@ -51,25 +51,6 @@
                 </div>
             @endforeach
         </div>
-        {{-- <div class="form-group">
-            <label for="horarios">Horarios</label>
-            <div id="horarios-container">
-                <div class="horario">
-                    <select name="horarios[0][dia_semana]" class="form-control" required>
-                        <option value="Lunes">Lunes</option>
-                        <option value="Martes">Martes</option>
-                        <option value="Miércoles">Miércoles</option>
-                        <option value="Jueves">Jueves</option>
-                        <option value="Viernes">Viernes</option>
-                        <option value="Sábado">Sábado</option>
-                        <option value="Domingo">Domingo</option>
-                    </select>
-                    <input type="time" name="horarios[0][hora_apertura]" class="form-control" required>
-                    <input type="time" name="horarios[0][hora_cierre]" class="form-control" required>
-                </div>
-            </div>
-            <button type="button" id="add-horario" class="btn btn-secondary">Añadir Horario</button>
-        </div> --}}
         <div class="form-group">
             <label for="horarios">Horarios:</label>
             @foreach(['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'] as $dia_semana)
