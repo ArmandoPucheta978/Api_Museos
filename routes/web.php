@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MuseoController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Museo;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {

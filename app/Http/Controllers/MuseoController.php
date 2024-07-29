@@ -19,7 +19,7 @@ class MuseoController extends Controller
             $museos = new Museo();
         }
         $tipos = Tipo::all();
-        return view('/Museo', compact('museos', 'tipos'));
+        return view('Museo', compact('museos', 'tipos'));
     }
 
     public function storeAll(Request $req){
