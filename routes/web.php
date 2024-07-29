@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/museo/guardar', [MuseoController::class,'storeAll'])->name('guardar.museo');
     Route::get('/museo/eliminar', [MuseoController::class,'delete'])->name('eliminar.museo');
     Route::get('/museos', [MuseoController::class,'index'])->name('museos');
-    //Route::resource('/museos', MuseoController::class);
+    Route::resource('/museos', MuseoController::class);
 });
 
 require __DIR__.'/auth.php';
