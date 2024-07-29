@@ -8,6 +8,7 @@ use App\Models\Museo;
 use App\Models\Tipo;
 use App\Models\TipoMuseo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MuseoController extends Controller
 {
@@ -67,8 +68,11 @@ class MuseoController extends Controller
         if ($req->hasFile('images')) {
             foreach ($req->file('images') as $image) {
                 $path = $image->store('public/images');
+                $imageName = time().'.'.$image->extension();
+                // Almacenar la imagen en DigitalOcean Spaces
+                Storage::disk('do')->put($imageName, file_get_contents($image->getPathName()), 'public');
                 $museo->imagenes()->create([
-                    'ruta' => basename($path)
+                    'ruta' => basename($imageName),
                 ]);
             }
         }
