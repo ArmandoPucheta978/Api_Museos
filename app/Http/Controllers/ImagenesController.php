@@ -88,8 +88,8 @@ class ImagenesController extends Controller
         $image = Imagen::findOrFail($id);
 
         // Obtener la URL de la imagen desde DigitalOcean Spaces
-        $spaceUrl = env('DO_SPACES_ENDPOINT');
-        $bucketName = env('DO_SPACES_BUCKET');
+        $spaceUrl = env('SPACES_ENDPOINT');
+        $bucketName = env('SPACES_BUCKET');
         $imagePath = $image->path;
 
         // Construir la URL

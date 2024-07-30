@@ -153,7 +153,7 @@ class MuseoController extends Controller
                 'museo_id' => $museo->id,
                 'museo_nombre' => $museo->nombre,
                 'descripcion' => $museo->descripcion,
-                'direccion' => $museo->direccion,
+                'direccion' => $museo->ubicacion,
                 'telefono' => $museo->telefono,
                 'website' => $museo->website,
                 'costo_entrada' => $museo->costo_entrada,

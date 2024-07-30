@@ -41,7 +41,7 @@
                 </td>
                 <td>
                     @foreach($museo->imagenes as $imagen)
-                        <img src="{{ asset('storage/images/' . $imagen->ruta) }}" alt="Imagen del Museo" style="width: 50px; height: 50px;">
+                        <img src="{{ asset($imagen->ruta) }}" alt="Imagen del Museo" style="width: 50px; height: 50px;">
                     @endforeach
                 </td>
                 <td>

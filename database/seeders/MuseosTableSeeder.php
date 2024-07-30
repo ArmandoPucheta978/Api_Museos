@@ -54,7 +54,7 @@ class MuseosTableSeeder extends Seeder
                 'nombre' => 'Museo Militar de Aviación.',
                 'ubicacion' => 'Carretera Federal México- Pachuca, en el interior de la “Base Aérea Militar No. 1”, Santa Lucía.',
                 'ciudad' => 'Estaado de México',
-                'pais' => 'México',
+                'pais' => 'México', 
                 'costo_entrada' => 0.00,
                 'descripcion' => 'La obra museística se encuentra representada por una exposición permanente de aeronaves, vehículos, piezas únicas, documentos, fotografías y esculturas, que proporcionan al visitante la oportunidad de recorrer los pasajes y hechos gloriosos de la Fuerza Aérea Mexicana, como elemento activo y constante de la historia nacional.',
                 'contacto' => 'sdnfam02@mail.sedena.gob.mx',
